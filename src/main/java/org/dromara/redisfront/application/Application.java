@@ -1,4 +1,5 @@
 package org.dromara.redisfront.application;
+
 import lombok.extern.slf4j.Slf4j;
 import org.dromara.quickswing.QSApplicationInitializer;
 import org.dromara.quickswing.ui.app.QSWidget;
