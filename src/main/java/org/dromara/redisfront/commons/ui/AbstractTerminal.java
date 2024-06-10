@@ -91,7 +91,7 @@ public abstract class AbstractTerminal extends JPanel implements KeyListener, Ca
             }
             this.print("\n");
             this.print(connectInfo().host().concat(":").concat(connectInfo().port().toString()).concat(Fn.equal("0", databaseName()) ? "" : "[" + databaseName() + "]").concat(">"));
-        } else if (currentKeyCode == KeyEvent.VK_ENTER && e.getKeyChar() != '\n') {
+        } else if (currentKeyCode == KeyEvent.VK_ENTER) {
             e.consume();
             terminal.setText(terminal.getText().concat(String.valueOf(e.getKeyChar())));
         }
@@ -125,16 +125,11 @@ public abstract class AbstractTerminal extends JPanel implements KeyListener, Ca
         if (currentKeyCode == KeyEvent.VK_DOWN && !commandHistory.isEmpty()) {
             e.consume();
             consumeFlag = true;
-            if (!commandHistory.isEmpty()) {
-                if (commandHistoryIndex < commandHistory.size() - 1) {
-                    String input = terminal.getText().substring(0, lastSelectionStart);
-                    commandHistoryIndex = commandHistoryIndex + 1;
-                    System.out.println("commandCacheIndex:" + commandHistoryIndex);
-                    System.out.println("commandCache.size():" + commandHistory.size());
-                    terminal.setText(input.concat(commandHistory.get(commandHistoryIndex)));
-                }
-            } else if (commandHistoryIndex == 0) {
+            if (commandHistoryIndex < commandHistory.size() - 1) {
                 String input = terminal.getText().substring(0, lastSelectionStart);
+                commandHistoryIndex = commandHistoryIndex + 1;
+                System.out.println("commandCacheIndex:" + commandHistoryIndex);
+                System.out.println("commandCache.size():" + commandHistory.size());
                 terminal.setText(input.concat(commandHistory.get(commandHistoryIndex)));
             }
         }

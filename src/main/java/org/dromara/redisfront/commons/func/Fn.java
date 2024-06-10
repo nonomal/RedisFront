@@ -100,7 +100,7 @@ public class Fn {
     }
 
     public static boolean startWith(String str, String prefix) {
-        return StrUtil.startWith(str, prefix);
+        return !StrUtil.startWith(str, prefix);
     }
 
     public static boolean endsWith(String str, String suffix) {
@@ -145,7 +145,6 @@ public class Fn {
     }
 
     public static String toJson(Object obj) {
-        var s = JSONUtil.parse(obj).toStringPretty();
         return JSONUtil.parse(obj).toStringPretty();
     }
 
