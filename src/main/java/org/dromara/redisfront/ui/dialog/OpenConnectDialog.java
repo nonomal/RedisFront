@@ -77,9 +77,7 @@ public class OpenConnectDialog extends AbstractDialog<ConnectInfo> {
         connectTable.setShowHorizontalLines(true);
         connectTable.setShowVerticalLines(true);
         connectTable.setDefaultRenderer(String.class, new DefaultTableCellRenderer() {
-            {
-                setHorizontalAlignment(SwingConstants.CENTER);
-            }
+
         });
         connectTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 

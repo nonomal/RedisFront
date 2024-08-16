@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     `java-library`
-    kotlin("jvm") version "1.9.20-RC"
+    kotlin("jvm") version "2.0.0"
 }
 
 buildscript {
@@ -65,11 +65,11 @@ val applicationName: String = "RedisFront"
 val organization: String = "dromara.org"
 val supportUrl: String = "https://redisfront.dromara.org"
 
-val hutoolVersion = "5.8.10"
+val hutoolVersion = "5.8.21"
 val fifesoftVersion = "3.2.0"
 val derbyVersion = "10.15.2.0"
 val lettuceVersion = "6.2.0.RELEASE"
-val logbackVersion = "1.4.1"
+val logbackVersion = "1.4.12"
 
 val fatJar = false
 
@@ -114,14 +114,14 @@ dependencies {
     implementation("com.fifesoft:rstaui:${fifesoftVersion}")
     implementation("ch.qos.logback:logback-classic:${logbackVersion}")
     implementation("at.swimmesberger:swingx-core:1.6.8")
-    implementation("commons-net:commons-net:3.8.0")
+    implementation("commons-net:commons-net:3.9.0")
     implementation("org.bouncycastle:bcpkix-jdk15on:1.70")
     implementation("org.bouncycastle:bcprov-jdk15on:1.70")
     implementation("com.intellij:forms_rt:7.0.3")
     implementation("com.jcraft:jsch:0.1.55")
     implementation("com.jcraft:jsch:0.1.55")
     implementation("org.dromara:quick-swing:1.1-SNAPSHOT")
-    implementation(kotlin("stdlib-jdk21"))
+    implementation(kotlin("stdlib-jdk8"))
 }
 repositories {
     mavenCentral()
